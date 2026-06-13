@@ -1,0 +1,140 @@
+.shell {
+  --shell-padding: 24px;
+  --sidebar-width: 280px;
+  --topbar-height: 76px;
+
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #102033;
+  color: #fff;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: var(--shell-padding);
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  font-weight: 800;
+  gap: 12px;
+  min-height: calc(var(--topbar-height) - (var(--shell-padding) * 2));
+  margin-bottom: 22px;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #2f9e44;
+  border-radius: 8px;
+  display: inline-flex;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.nav {
+  display: grid;
+  gap: 6px;
+}
+
+.nav a {
+  align-items: center;
+  border-radius: 6px;
+  color: #d7e2ef;
+  display: flex;
+  gap: 10px;
+  min-height: 44px;
+  padding: 7px 12px;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: #1c3654;
+  color: #fff;
+}
+
+.nav-icon {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  display: inline-flex;
+  flex: 0 0 30px;
+  font-size: 11px;
+  font-weight: 800;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: 0;
+}
+
+.nav a.active .nav-icon,
+.nav a:hover .nav-icon {
+  background: #2f9e44;
+  border-color: #2f9e44;
+}
+
+.main {
+  min-width: 0;
+}
+
+.topbar {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  min-height: var(--topbar-height);
+  padding: 0 var(--shell-padding);
+}
+
+.topbar div {
+  display: grid;
+  gap: 4px;
+}
+
+.topbar span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.logout-button {
+  background: transparent;
+  border: 0;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.content {
+  padding: var(--shell-padding);
+}
+
+.content > * {
+  display: block;
+  max-width: 1180px;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .shell {
+    --shell-padding: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    max-height: none;
+    position: static;
+  }
+
+  .nav {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}

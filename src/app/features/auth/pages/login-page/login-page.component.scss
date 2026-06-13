@@ -1,0 +1,56 @@
+.auth-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  max-width: 420px;
+  padding: 28px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0;
+}
+
+label {
+  display: grid;
+  font-weight: 700;
+  gap: 6px;
+}
+
+input {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+select {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+.auth-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.auth-links a {
+  color: var(--primary);
+  font-weight: 700;
+}
